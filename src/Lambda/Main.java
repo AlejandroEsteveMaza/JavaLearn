@@ -1,12 +1,14 @@
 package Lambda;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
-        filtradoNumerosPares();
+        verificaciónCadenaVacía();
     }
 
     private static void filtradoNumerosPares(){
@@ -31,8 +33,13 @@ public class Main {
     public static void operacionSobreCadaElementoDeUnaLista() {
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
 
-        // Utiliza una expresión lambda para duplicar cada número
+        // Utiliza una expresión lambda para duplicar (x2) cada número
         // Imprime el resultado
+
+        numeros.stream()
+                .map(n -> n * 2)
+                .forEach(System.out::println);
+
     }
 
     public static void verificaciónCadenaVacía() {
@@ -40,5 +47,11 @@ public class Main {
 
         // Utiliza una expresión lambda para verificar si alguna cadena está vacía
         // Imprime el resultado
+
+        boolean cadenaVacia = cadenas.stream()
+                .anyMatch(String::isEmpty);
+
+        System.out.println(cadenaVacia);
+
     }
 }
