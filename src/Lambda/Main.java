@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
-        verificaciónCadenaVacía();
+        longitudMayor3();
     }
 
-    private static void filtradoNumerosPares(){
+    private static void filtradoNumerosPares() {
         // Utiliza una expresión lambda para filtrar solo los números pares
         // Imprime el resultado
         List<Integer> listaNumeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -54,4 +54,32 @@ public class Main {
         System.out.println(cadenaVacia);
 
     }
+
+    public static void longitudMayor3() {
+        List<String> cadenas = Arrays.asList("Hola", "", "Jav", "a", " ", "    ", "JOSITO");
+
+        // Dada una lista de strings, utiliza funciones lambda para contar cuántos de ellos tienen una longitud mayor a 3 caracteres.
+
+        cadenas.stream()
+                .filter(c -> c.length() > 3)
+                .forEach(System.out::println);
+
+        var cantidad = cadenas.stream()
+                .filter(c -> c.length() > 3)
+                .count();
+
+        System.out.println("Cantidad de cadenas con longitud mayor a 3: " + cantidad);
+
+    }
+
+
+    /*
+    Ejercicio 5: Concatenar cadenas
+
+    Descripción:
+    Crea una lista de cadenas y utiliza funciones lambda para concatenarlas todas en una única cadena.
+
+    Condiciones de Superación:
+    Mostrar por consola la cadena resultante.
+    */
 }
