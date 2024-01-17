@@ -1,20 +1,18 @@
 package Lambda;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
-        longitudMayor3();
+        filtradoNumerosPares();
     }
 
     private static void filtradoNumerosPares() {
         // Utiliza una expresión lambda para filtrar solo los números pares
         // Imprime el resultado
-        List<Integer> listaNumeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> listaNumeros = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         //v1
         List<Integer> listaNumerosPares = listaNumeros
                 .stream()
@@ -42,7 +40,7 @@ public class Main {
 
     }
 
-    public static void verificaciónCadenaVacía() {
+    public static void verificacionCadenaVacia() {
         List<String> cadenas = Arrays.asList("Hola", "", "Java", "Lambda");
 
         // Utiliza una expresión lambda para verificar si alguna cadena está vacía
@@ -82,4 +80,6 @@ public class Main {
     Condiciones de Superación:
     Mostrar por consola la cadena resultante.
     */
+
+    //ordenar numeros
 }
