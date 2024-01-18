@@ -1,13 +1,12 @@
 package Lambda;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
-        concatenarCadenas();
+        ordenarNumerosEliminarRepetidos();
     }
 
     private static void filtradoNumerosPares() {
@@ -81,10 +80,14 @@ public class Main {
 
     }
 
+    public static void ordenarNumerosEliminarRepetidos(){
+        List<Integer> numsDesordenados = Arrays.asList(9, 2, 7, 0, 5, 8, 7, 1, 3, 2, 6, 4);
 
+        List<Integer> listaSinDuplicadosOrdenada =  numsDesordenados.stream().distinct().sorted().toList();
 
+        System.out.println("Ascendente: " + listaSinDuplicadosOrdenada);
+    }
 
-    //ordenar numeros
 
 
      /*
