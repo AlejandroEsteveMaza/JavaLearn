@@ -2,11 +2,12 @@ package Lambda;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
     public static void main(String[] args) {
-        filtradoNumerosPares();
+        concatenarCadenas();
     }
 
     private static void filtradoNumerosPares() {
@@ -70,16 +71,28 @@ public class Main {
 
     }
 
+    public static void concatenarCadenas(){
+        List<String> cadenas = Arrays.asList("Hola", " ", "Mundo", "!");
 
-    /*
-    Ejercicio 5: Concatenar cadenas
+        String cadenaConcatenada = cadenas.stream()
+                .reduce("", (a, b) -> a + b);
 
-    Descripción:
-    Crea una lista de cadenas y utiliza funciones lambda para concatenarlas todas en una única cadena.
+        System.out.println(cadenaConcatenada);
 
-    Condiciones de Superación:
-    Mostrar por consola la cadena resultante.
-    */
+    }
+
+
+
 
     //ordenar numeros
+
+
+     /*
+    Ejercicio 4: Verificar si hay números negativos
+Descripción:
+Dada una lista de números, utiliza funciones lambda para verificar si hay algún número negativo.
+
+Condiciones de Superación:
+Mostrar por consola un mensaje indicando si hay o no números negativos.
+    */
 }
