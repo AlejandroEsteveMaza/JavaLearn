@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
-        ordenarNumerosEliminarRepetidos();
+        numerosNegativos();
     }
 
     private static void filtradoNumerosPares() {
@@ -88,14 +88,11 @@ public class Main {
         System.out.println("Ascendente: " + listaSinDuplicadosOrdenada);
     }
 
+    public static void numerosNegativos(){
+        List<Integer> numeros= Arrays.asList(1,-2,3);
 
+        boolean hayNumeroNegativo =  numeros.stream().anyMatch(n -> n < 0);
 
-     /*
-    Ejercicio 4: Verificar si hay números negativos
-Descripción:
-Dada una lista de números, utiliza funciones lambda para verificar si hay algún número negativo.
-
-Condiciones de Superación:
-Mostrar por consola un mensaje indicando si hay o no números negativos.
-    */
+        System.out.println(hayNumeroNegativo);
+    }
 }
