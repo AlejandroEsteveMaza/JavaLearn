@@ -12,6 +12,14 @@ public class Carta {
 
     @Override
     public String toString() {
-        return valor +" " +palo;
+        return valor + " " + palo;
+    }
+
+    public Valor getValor() {
+        return valor;
+    }
+
+    public Palo getPalo() {
+        return palo;
     }
 }
