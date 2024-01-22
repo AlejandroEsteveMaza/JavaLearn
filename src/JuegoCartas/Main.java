@@ -17,16 +17,15 @@ public class Main {
             printer.printDebug(carta.toString());
         }
 
-
+        //Repartir cartas iniciales
         Jugador jugador = new Jugador(baraja.repartirCartas(Jugador.MAX_PLAYER_INITIAL_CARDS), "Jugador 1");
-        printer.print(jugador.toString());
-        printer.print(String.valueOf(jugador.valorMano()));
+        comprobarDerrota(jugador);
+
 
         Jugador crupier = new Jugador(baraja.repartirCartas(Jugador.MAX_CRUPIER_INITIAL_CARDS), "Crupier");
-        printer.print(crupier.toString());
-        printer.print(String.valueOf(crupier.valorMano()));
+        comprobarDerrota(crupier);
 
-
+        //Jugador
         Scanner scanner = new Scanner(System.in);
         printer.print("\n 1. Pedir \n 2. Plantarse \n Elige una opcion: ");
         int opcion = scanner.nextInt();
@@ -37,16 +36,16 @@ public class Main {
             List<Carta> cartasAdicionales = baraja.repartirCartas(cantidadCartasAdicionales);
             jugador.addCardsToHand(cartasAdicionales);
             comprobarDerrota(jugador);
-            printer.print(String.valueOf(jugador.valorMano()));
         }
         scanner.close();
 
+        //Crupier
         while (crupier.valorMano() < 17){
             crupier.addCardsToHand(baraja.repartirCartas(1));
-            //printer.print(crupier.toString());
         }
         comprobarDerrota(crupier);
 
+        //Comprobar ganador
         int valorJugador = jugador.valorMano();
         int valorCrupier = crupier.valorMano();
 
@@ -67,7 +66,10 @@ public class Main {
     private static void comprobarDerrota(Jugador jugador){
         int suma = jugador.valorMano();
         printer.printDebug(jugador.toString());
-        if(suma>21)
-            printer.print("HAS PERDIDO");
+        printer.print(String.valueOf(jugador.valorMano()));
+        if(suma>21) {
+            printer.print(jugador.getNombre()+" HA PERDIDO");
+            System.exit(0);
+        }
     }
 }
